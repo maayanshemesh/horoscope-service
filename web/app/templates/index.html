@@ -13,6 +13,12 @@
             <p>Select your zodiac sign to see today's horoscope</p>
         </header>
 
+        {% if error %}
+        <div class="error-message">
+            {{ error }}
+        </div>
+        {% endif %}
+
         <div class="zodiac-grid">
             <a href="{{ url_for('main.horoscope_page', sign='aries') }}" class="zodiac-item">
                 <div class="zodiac-icon">♈</div>
