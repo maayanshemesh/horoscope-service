@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Horoscope Service</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Daily Horoscope</h1>
+            <p>Select your zodiac sign to see today's horoscope</p>
+        </header>
+
+        <div class="zodiac-grid">
+            <a href="{{ url_for('main.horoscope_page', sign='aries') }}" class="zodiac-item">
+                <div class="zodiac-icon">♈</div>
+                <span>Aries</span>
+                <span class="date-range">Mar 21 - Apr 19</span>
+            </a>
+            <a href="{{ url_for('main.horoscope_page', sign='taurus') }}" class="zodiac-item">
+                <div class="zodiac-icon">♉</div>
+                <span>Taurus</span>
+                <span class="date-range">Apr 20 - May 20</span>
+            </a>
+            <a href="{{ url_for('main.horoscope_page', sign='gemini') }}" class="zodiac-item">
+                <div class="zodiac-icon">♊</div>
+                <span>Gemini</span>
+                <span class="date-range">May 21 - Jun 20</span>
+            </a>
+            <a href="{{ url_for('main.horoscope_page', sign='cancer') }}" class="zodiac-item">
+                <div class="zodiac-icon">♋</div>
+                <span>Cancer</span>
+                <span class="date-range">Jun 21 - Jul 22</span>
+            </a>
+            <a href="{{ url_for('main.horoscope_page', sign='leo') }}" class="zodiac-item">
+                <div class="zodiac-icon">♌</div>
+                <span>Leo</span>
+                <span class="date-range">Jul 23 - Aug 22</span>
+            </a>
+            <a href="{{ url_for('main.horoscope_page', sign='virgo') }}" class="zodiac-item">
+                <div class="zodiac-icon">♍</div>
+                <span>Virgo</span>
+                <span class="date-range">Aug 23 - Sep 22</span>
+            </a>
+            <a href="{{ url_for('main.horoscope_page', sign='libra') }}" class="zodiac-item">
+                <div class="zodiac-icon">♎</div>
+                <span>Libra</span>
+                <span class="date-range">Sep 23 - Oct 22</span>
+            </a>
+            <a href="{{ url_for('main.horoscope_page', sign='scorpio') }}" class="zodiac-item">
+                <div class="zodiac-icon">♏</div>
+                <span>Scorpio</span>
+                <span class="date-range">Oct 23 - Nov 21</span>
+            </a>
+            <a href="{{ url_for('main.horoscope_page', sign='sagittarius') }}" class="zodiac-item">
+                <div class="zodiac-icon">♐</div>
+                <span>Sagittarius</span>
+                <span class="date-range">Nov 22 - Dec 21</span>
+            </a>
+            <a href="{{ url_for('main.horoscope_page', sign='capricorn') }}" class="zodiac-item">
+                <div class="zodiac-icon">♑</div>
+                <span>Capricorn</span>
+                <span class="date-range">Dec 22 - Jan 19</span>
+            </a>
+            <a href="{{ url_for('main.horoscope_page', sign='aquarius') }}" class="zodiac-item">
+                <div class="zodiac-icon">♒</div>
+                <span>Aquarius</span>
+                <span class="date-range">Jan 20 - Feb 18</span>
+            </a>
+            <a href="{{ url_for('main.horoscope_page', sign='pisces') }}" class="zodiac-item">
+                <div class="zodiac-icon">♓</div>
+                <span>Pisces</span>
+                <span class="date-range">Feb 19 - Mar 20</span>
+            </a>
+        </div>
+
+        <footer>
+            <p>Daily Horoscope Service - DevOps Project</p>
+        </footer>
+    </div>
+</body>
+</html>
