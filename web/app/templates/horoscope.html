@@ -1,0 +1,67 @@
+<!-- horoscope.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ sign }} Horoscope - Daily Horoscope Service</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>{{ sign }} Daily Horoscope</h1>
+            <!-- date_range is no longer available from the API -->
+            <!-- <p class="date-range">{{ horoscope.date_range }}</p> -->
+        </header>
+
+        <div class="horoscope-content">
+            {% if horoscope and not horoscope.error %}
+                <div class="horoscope-date">
+                    <!-- Use horoscope.date for the current date of the horoscope -->
+                    <p>For: {{ horoscope.date }}</p>
+                </div>
+
+                <div class="horoscope-description">
+                    <p>{{ horoscope.description }}</p>
+                </div>
+
+                <!-- The following 'extras' are not provided by the new API endpoint -->
+                <!-- 
+                <div class="horoscope-extras">
+                    <div class="extra-item">
+                        <h3>Mood</h3>
+                        <p>{{ horoscope.mood }}</p>
+                    </div>
+                    <div class="extra-item">
+                        <h3>Lucky Number</h3>
+                        <p>{{ horoscope.lucky_number }}</p>
+                    </div>
+                    <div class="extra-item">
+                        <h3>Lucky Time</h3>
+                        <p>{{ horoscope.lucky_time }}</p>
+                    </div>
+                </div> 
+                -->
+            {% elif horoscope.error %}
+                <div class="error-message">
+                    <p>Error fetching horoscope: {{ horoscope.error }}</p>
+                    <p>Please try again later.</p>
+                </div>
+            {% else %}
+                <div class="error-message">
+                    <p>Horoscope data is unavailable at the moment. Please try again later.</p>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="back-button">
+            <a href="{{ url_for('main.index') }}">← Back to All Signs</a>
+        </div>
+
+        <footer>
+            <p>Daily Horoscope Service - DevOps Project</p>
+        </footer>
+    </div>
+</body>
+</html>
