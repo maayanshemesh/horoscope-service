@@ -1,0 +1,30 @@
+services:
+  web:
+    build: ./web
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+    restart: always
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    volumes:
+      - ./web:/app
+    networks:
+      - horoscope-network
+
+  redis:
+    image: redis:6.2-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./redis-data:/data
+    command: redis-server --appendonly yes
+    restart: always
+    networks:
+      - horoscope-network
+
+networks:
+  horoscope-network:
+    driver: bridge
