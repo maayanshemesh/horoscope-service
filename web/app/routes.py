@@ -42,7 +42,7 @@ def horoscope_page():
         return render_template('index.html')
 
     horoscope_data = get_horoscope_for_sign(sign, current_app.config['REDIS'])
-    return render_template('horoscope.html', sign=sign.capitalize(), horoscope=horoscope_data)
+    return render_template('horoscope.html', sign=sign.capitalize(), horoscope=horoscope_data) #Add a blank line before the return statement for more readable code
 
 @main_bp.route('/api/horoscope/<sign>')
 def horoscope_api(sign):

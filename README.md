@@ -1,5 +1,6 @@
 # Succeeded to commit to main branch directly without pull request
 
+Great project!
 
 # 🔮 Daily Horoscope Service
 
