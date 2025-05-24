@@ -1,3 +1,5 @@
+# Succeeded to commit to main branch directly without pull request
+
 
 # 🔮 Daily Horoscope Service
 
